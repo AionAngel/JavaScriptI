@@ -6,7 +6,7 @@ var pacientes = document.querySelectorAll(".paciente");
 
 for (var i = 0; i < pacientes.length; i++){
     var paciente = pacientes[i];
-    console.log(paciente);
+    //console.log(paciente);
 
     var tdPeso = paciente.querySelector(".info-peso");
     var tdAltura = paciente.querySelector(".info-altura");
@@ -20,8 +20,8 @@ for (var i = 0; i < pacientes.length; i++){
 
 
 
-    var pesoEhvalido = validaPeso(peso);
-    var alturaEhvalida = validaAltura(altura);
+    var pesoEhValido = validaPeso(peso);
+    var alturaEhValida = validaAltura(altura);
 
     if(!pesoEhValido){
         console.log("Peso Invalido");
@@ -37,7 +37,7 @@ for (var i = 0; i < pacientes.length; i++){
         paciente.classList.add("paciente-invalido");
     }
 
-    if (pesoEhvalido && alturaEhvalida){
+    if (pesoEhValido && alturaEhValida){
 
         var imc = calculaImc(peso,altura);
         tdImc.textContent = imc;
