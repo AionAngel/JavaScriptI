@@ -2,10 +2,10 @@
 var linhas = document.querySelectorAll(".numero");
 
 
-var num1EhValido = true;
-var num2EhValido = true;
-
 for (var i = 0; i < linhas.length; i ++) {
+
+    var num1EhValido = true;
+    var num2EhValido = true;
 
     var linhaAtual = linhas[i];
     //var trAtual = linhaAtual.querySelector(".numero");
