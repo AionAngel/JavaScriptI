@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <div class="jumbotron titulo">
-            <h1>Tabela Automation Solutions</h1>
+            <h1 class="">Tabela Automation Solutions</h1>
             <h3>Tabela de teste Security</h3>
         </div>
         
@@ -51,16 +51,16 @@
     
     <section class="container">
         <h2>Insira os numeros para Somar</h2>
-        <form class="form-inline">
+        <form class="form-inline" id="formulario">
             <div class="form-group">
                 <label for="primeiroNumero">Numero 1</label>
-                <input type="text" id="primeiroNumero" placeholder="Numero Qualquer">
+                <input type="text" id="primeiroNumero" placeholder="Ex: 3" name='primeiro'>
             </div>
             <div class="form-group">
                 <label for="segundoNumero">Numero 2</label>
-                <input type="text" id="segundoNumero" placeholder="Numero Qualquer">
+                <input type="text" id="segundoNumero" placeholder="Ex: 2" name='segundo'>
             </div>
-            <button type="submit" class="btn btn-default">Calcular</button>
+            <button type="submit" class="btn btn-default" id="botao">Calcular</button>
         </form>
     </section>
 
