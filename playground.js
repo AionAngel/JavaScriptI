@@ -34,9 +34,15 @@ for (var i = 0; i < linhas.length; i ++) {
     }
     
     if (num1EhValido && num2EhValido) {
-        res.textContent = (+num1 + +num2).toFixed(2);
+        res.textContent = somaDoisNumeros(num1,num2);
     }
     
+}
+
+
+function somaDoisNumeros(primeiro,segundo) {
+    var resultado = (+primeiro + +segundo).toFixed(2);
+    return resultado;
 }
 
 
