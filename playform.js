@@ -21,6 +21,7 @@ botao.addEventListener('click', function(event){
 
      //Insere o TR dentro do TBODY
      tabela.appendChild(pacienteTr);
+     ehVerdadeiro();
      formulario.reset();
     
     });

@@ -4,11 +4,11 @@ titulo.addEventListener("click", () => {
     console.log("Oi fui clicado por uma arrow function..O que voce quer?");
 });
 
-var linhas = document.querySelectorAll(".numero");
 
 
-function ehVerdadeiro (linhas) {
 
+function ehVerdadeiro () {
+    var linhas = document.querySelectorAll(".numero");
     for (var i = 0; i < linhas.length; i ++) {
 
         var num1EhValido = true;
@@ -40,6 +40,8 @@ function ehVerdadeiro (linhas) {
         
     }
 }
+
+ehVerdadeiro();
 
 function somaDoisNumeros(primeiro,segundo) {
     var resultado = (+primeiro + +segundo).toFixed(2);
