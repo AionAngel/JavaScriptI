@@ -21,6 +21,7 @@ botao.addEventListener('click', function(event){
 
      //Insere o TR dentro do TBODY
      tabela.appendChild(pacienteTr);
+     formulario.reset();
     
     });
 
@@ -38,26 +39,19 @@ botao.addEventListener('click', function(event){
         //Criando elementos TR e TD para inserir na tabela
         var elementoTr = document.createElement('tr');
         elementoTr.classList.add('numero');
-
-        var elementoTd1 = criaTd(dados.num1,"primeiro");
-        var elementoTd2 = criaTd(dados.num2,"segundo");
-        var elementoTd3 = criaTd(dados.soma,"resultado");
-
         //Insere as TDs dentro da TR criada
-        elementoTr.appendChild(elementoTd1);
-        elementoTr.appendChild(elementoTd2);
-        elementoTr.appendChild(elementoTd3);
+        elementoTr.appendChild(criaTd(dados.num1,"primeiro"));
+        elementoTr.appendChild(criaTd(dados.num2,"segundo"));
+        elementoTr.appendChild(criaTd(dados.soma,"resultado"));
 
-       
         return elementoTr;
        
-
     }
 
     function criaTd (dado,classe){
         var td = document.createElement('td');
         td.textContent = dado;
         td.classList.add(classe);
-        
+
         return td;
     }
