@@ -12,15 +12,24 @@ botao.addEventListener('click', function(event){
     //Lendo o formulario e os inputs do HTML
     var formulario = document.querySelector('#formulario');
     var dados = obtemNumerosForm(formulario);
+    
+    var erro = validaDados(dados);
+
+    if (erro.length > 0) {
+        var mensagemErro = document.querySelector('#mensagem-erro');
+        mensagemErro.textContent = erro;
+        mensagemErro.classList.add('mensagem-erro');
+        return;
+    }
 
     //Cria TR
-    var pacienteTr = criaTr(dados);
+    var dadosTr = criaTr(dados);
     
      //Lê a TBODY do HTML
      var tabela = document.querySelector('#tabela-pacientes');
 
      //Insere o TR dentro do TBODY
-     tabela.appendChild(pacienteTr);
+     tabela.appendChild(dadosTr);
      ehVerdadeiro();
      formulario.reset();
     
@@ -55,4 +64,12 @@ botao.addEventListener('click', function(event){
         td.classList.add(classe);
 
         return td;
+    }
+
+    function validaDados (dados) {
+        if(validaNum1(dados.num1) && validaNum2(dados.num2)) {
+            return "";
+        }else {
+            return "Numeros Invalidos";
+        }
     }
