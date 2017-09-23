@@ -12,6 +12,13 @@
     background-color: red;
     color: white;
     padding: 10px;
-    display: inline;
+    margin: 5px;
+    width: 100%;
+    
 }
+    
+#mensagem-erro {
 
+   
+    
+}

@@ -12,13 +12,14 @@ botao.addEventListener('click', function(event){
     //Lendo o formulario e os inputs do HTML
     var formulario = document.querySelector('#formulario');
     var dados = obtemNumerosForm(formulario);
+    console.log(dados.num1);
+    console.log(dados.num2);
     
-    var erro = validaDados(dados);
-
-    if (erro.length > 0) {
-        var mensagemErro = document.querySelector('#mensagem-erro');
-        mensagemErro.textContent = erro;
-        mensagemErro.classList.add('mensagem-erro');
+    var erros = validaDados(dados);
+    
+    if (erros.length > 0) {
+        exibeErro(erros);
+        
         return;
     }
 
@@ -67,9 +68,35 @@ botao.addEventListener('click', function(event){
     }
 
     function validaDados (dados) {
-        if(validaNum1(dados.num1) && validaNum2(dados.num2)) {
-            return "";
-        }else {
-            return "Numeros Invalidos";
+
+        var erros = [];
+        var num1Vazio = false;
+        var num2Vazio = false;
+    
+        if(dados.num1.length == 0) {
+            erros.push("Insira o primeiro numero");
+            num1Vazio = true;
         }
+        
+        if (dados.num2.length == 0) {
+            erros.push("Insira o segundo numero");
+            num2Vazio = true;
+        }
+        if (!num1Vazio && !num2Vazio) {
+            if(!validaNum1(dados.num1)) erros.push("Numero 1 esta invalido");
+            if(!validaNum2(dados.num2)) erros.push("Numero 2 esta invalido");
+        }
+        
+        return erros;
+        }
+
+    function exibeErro (erros) {
+        var ul = document.querySelector('#mensagem-erro');
+        erros.forEach(function(erro) {
+            var li = document.createElement("li");
+            li.classList.add('mensagem-erro');
+            li.textContent = erro;
+            ul.appendChild(li);
+            
+        });
     }
