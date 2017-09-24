@@ -17,8 +17,16 @@
     
 }
     
-#mensagem-erro {
+.fadeOut {
+    opacity: 0;
+    transition: 0.5s;
+}
 
-   
-    
+.procura {
+    margin-bottom: 19px;
+    width: 300px;
+}
+
+.invisivel {
+    display: none;
 }

@@ -12,9 +12,7 @@ botao.addEventListener('click', function(event){
     //Lendo o formulario e os inputs do HTML
     var formulario = document.querySelector('#formulario');
     var dados = obtemNumerosForm(formulario);
-    console.log(dados.num1);
-    console.log(dados.num2);
-    
+ 
     var erros = validaDados(dados);
     
     if (erros.length > 0) {
@@ -22,7 +20,8 @@ botao.addEventListener('click', function(event){
         
         return;
     }
-
+    var ul = document.querySelector('#mensagem-erro');
+    ul.innerHTML = "";
     //Cria TR
     var dadosTr = criaTr(dados);
     
@@ -92,6 +91,7 @@ botao.addEventListener('click', function(event){
 
     function exibeErro (erros) {
         var ul = document.querySelector('#mensagem-erro');
+        ul.innerHTML = "";
         erros.forEach(function(erro) {
             var li = document.createElement("li");
             li.classList.add('mensagem-erro');
