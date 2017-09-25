@@ -81,10 +81,25 @@ botao.addEventListener('click', function(event){
             erros.push("Insira o segundo numero");
             num2Vazio = true;
         }
+    
         if (!num1Vazio && !num2Vazio) {
             if(!validaNum1(dados.num1)) erros.push("Numero 1 esta invalido");
             if(!validaNum2(dados.num2)) erros.push("Numero 2 esta invalido");
         }
+
+        var dadosComparativo = document.querySelectorAll('.numero');
+        dadosComparativo.forEach(function(dadoComparativo) {
+
+            var dado1 = dadoComparativo.querySelector('.primeiro');
+            var dado2 = dadoComparativo.querySelector('.segundo');
+            
+            if(dado1.textContent == dados.num1 && dado2.textContent == dados.num2) {
+                
+                erros.push("O calculo solicitado ja existe na tabela");
+            }
+
+        });
+
         
         return erros;
         }
